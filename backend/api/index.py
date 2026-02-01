@@ -1,13 +1,16 @@
 """
 Vercel Serverless Function Entry Point for FastAPI
-
-This file adapts the FastAPI application to work as a Vercel serverless function.
-Note: This is a basic adapter. Some features like WebSockets and background tasks
-may have limitations in serverless environments.
 """
 
+import sys
+from pathlib import Path
+
+# Add parent directory to Python path
+backend_dir = Path(__file__).parent.parent
+sys.path.insert(0, str(backend_dir))
+
+# Now import from app.main
 from app.main import app
 
-# Vercel expects a variable named 'app' or a handler function
-# The FastAPI app instance will be used directly
+# Vercel handler
 handler = app
