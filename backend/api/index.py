@@ -10,7 +10,7 @@ backend_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(backend_dir))
 
 # Import the FastAPI app
-from app.main import app
+from main import app
 
 # Import Mangum adapter for AWS Lambda/Vercel
 from mangum import Mangum

@@ -2,8 +2,8 @@ import logging
 from typing import Optional
 from datetime import datetime, timedelta
 
-from app.database import get_database
-from app.models import AlertLog, AlertConfiguration, BinDisplayData, AlertType
+from database import get_database
+from models import AlertLog, AlertConfiguration, BinDisplayData, AlertType
 
 logger = logging.getLogger(__name__)
 

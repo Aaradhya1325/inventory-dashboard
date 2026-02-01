@@ -5,8 +5,8 @@ from typing import Optional
 from openpyxl import Workbook
 from openpyxl.utils import get_column_letter
 
-from app.services.inventory_service import inventory_service
-from app.services.alert_service import alert_service
+from services.inventory_service import inventory_service
+from services.alert_service import alert_service
 
 logger = logging.getLogger(__name__)
 

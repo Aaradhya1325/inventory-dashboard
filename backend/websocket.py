@@ -5,7 +5,7 @@ from typing import Set
 from datetime import datetime
 from fastapi import WebSocket, WebSocketDisconnect
 
-from app.models import BinDisplayData, AlertLog, WSMessageType
+from models import BinDisplayData, AlertLog, WSMessageType
 
 logger = logging.getLogger(__name__)
 

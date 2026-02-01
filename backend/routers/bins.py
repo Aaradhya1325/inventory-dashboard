@@ -3,11 +3,11 @@ from typing import Optional
 from datetime import datetime
 import logging
 
-from app.models import (
+from models import (
     BinDataPayload, BinConfigUpdate, BinDisplayData,
     ApiResponse, InventorySummary, HistoricalDataPoint
 )
-from app.services import inventory_service, alert_service
+from services import inventory_service, alert_service
 
 logger = logging.getLogger(__name__)
 

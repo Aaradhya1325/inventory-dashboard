@@ -5,7 +5,7 @@ from datetime import datetime
 from io import BytesIO
 import logging
 
-from app.services import export_service
+from services import export_service
 
 logger = logging.getLogger(__name__)
 

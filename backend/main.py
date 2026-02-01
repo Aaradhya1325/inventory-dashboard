@@ -3,11 +3,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 import logging
 
-from app.config import settings
-from app.database import init_database, close_database, run_migrations, seed_default_bins
-from app.routes import bins_router, alerts_router, export_router, analytics_router, set_broadcast_bin_update
-from app.services import set_broadcast_alert
-from app.websocket import websocket_endpoint, manager
+from config import settings
+from database import init_database, close_database, run_migrations, seed_default_bins
+from routers import bins_router, alerts_router, export_router, analytics_router, set_broadcast_bin_update
+from services import set_broadcast_alert
+from websocket import websocket_endpoint, manager
 
 # Configure logging
 logging.basicConfig(
@@ -88,7 +88,7 @@ async def websocket_route(websocket: WebSocket):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
-        "app.main:app",
+        "main:app",
         host=settings.host,
         port=settings.port,
         reload=settings.debug

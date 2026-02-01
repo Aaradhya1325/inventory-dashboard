@@ -2,7 +2,7 @@ import logging
 from pathlib import Path
 import random
 
-from app.database.connection import get_database
+from database.connection import get_database
 
 logger = logging.getLogger(__name__)
 

@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import Any, Optional
 import logging
 
-from app.config import settings
+from config import settings
 
 logger = logging.getLogger(__name__)
 

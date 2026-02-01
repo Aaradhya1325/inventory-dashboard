@@ -2,8 +2,8 @@ import logging
 from typing import Optional
 from datetime import datetime, timedelta
 
-from app.database import get_database
-from app.models import (
+from database import get_database
+from models import (
     BinConfiguration, BinDisplayData, BinStatus, 
     InventorySummary, HistoricalDataPoint, BinConfigUpdate
 )

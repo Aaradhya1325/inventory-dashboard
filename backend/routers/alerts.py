@@ -2,11 +2,11 @@ from fastapi import APIRouter, HTTPException, Query
 from typing import Optional
 import logging
 
-from app.models import (
+from models import (
     ApiResponse, PaginatedResponse, AcknowledgeRequest,
     AlertConfigUpdate, AlertLog, AlertConfiguration
 )
-from app.services import alert_service
+from services import alert_service
 
 logger = logging.getLogger(__name__)
 

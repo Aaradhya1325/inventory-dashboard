@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Query
 import logging
 
-from app.models import ApiResponse, StatusDistribution
-from app.services import inventory_service
+from models import ApiResponse, StatusDistribution
+from services import inventory_service
 
 logger = logging.getLogger(__name__)
 
