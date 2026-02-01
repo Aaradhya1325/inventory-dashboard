@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "name": "inventory-dashboard-backend",
+  "builds": [
+    {
+      "src": "app/main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "app/main.py"
+    }
+  ],
+  "env": {
+    "ENVIRONMENT": "production",
+    "LOG_LEVEL": "INFO"
+  },
+  "regions": ["iad1"]
+}

@@ -1,0 +1,13 @@
+backend/
+cf-pages/
+node_modules/
+.git/
+*.log
+.env
+.env.local
+__pycache__/
+*.pyc
+data/
+docker-compose.yml
+Dockerfile
+*.md
