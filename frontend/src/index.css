@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #1e293b;
+  background-color: #f1f5f9;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Status colors */
+.status-normal {
+  @apply bg-status-normal text-white;
+}
+
+.status-low {
+  @apply bg-status-low text-white;
+}
+
+.status-critical {
+  @apply bg-status-critical text-white;
+}
+
+.status-empty {
+  @apply bg-status-empty text-white;
+}
+
+.status-overfill {
+  @apply bg-status-overfill text-white;
+}
+
+/* Border status colors - using direct color values */
+.border-status-normal {
+  border-color: #22c55e;
+}
+
+.border-status-low {
+  border-color: #f59e0b;
+}
+
+.border-status-critical {
+  border-color: #ef4444;
+}
+
+.border-status-empty {
+  border-color: #6b7280;
+}
+
+.border-status-overfill {
+  border-color: #3b82f6;
+}
+
+/* Fill bar animations */
+.fill-bar {
+  transition: width 0.5s ease-out, background-color 0.3s ease;
+}
+
+/* Pulse animation for alerts */
+@keyframes alert-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.alert-pulse {
+  animation: alert-pulse 2s ease-in-out infinite;
+}
+
+/* Card hover effects */
+.bin-card {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.bin-card:hover {
+  @apply shadow-lg transform -translate-y-0.5;
+}
+
+/* Update highlight animation */
+.update-highlight {
+  animation: highlight 1.5s ease-out;
+}
+
+@keyframes highlight {
+  0% {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
