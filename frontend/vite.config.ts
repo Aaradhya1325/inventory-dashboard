@@ -8,6 +8,7 @@ export default defineConfig({
   root: '.',
   base: '/',
   publicDir: 'public',
+  envPrefix: ['VITE_', 'BACKEND_'],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

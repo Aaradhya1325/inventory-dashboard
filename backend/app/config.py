@@ -17,8 +17,9 @@ class Settings(BaseSettings):
     cloudflare_api_token: str = "your_api_token"
     d1_database_id: str = "your_database_id"
     
-    # CORS
+    # CORS - Configure allowed origins
     cors_origins: str = "http://localhost:5173,http://localhost:3000"
+    frontend_url: str = ""  # Set FRONTEND_URL env var to your deployed frontend URL
     
     # Logging
     log_level: str = "INFO"
@@ -30,7 +31,20 @@ class Settings(BaseSettings):
     
     @property
     def cors_origins_list(self) -> List[str]:
-        return [origin.strip() for origin in self.cors_origins.split(",")]
+        """Get list of allowed CORS origins from environment variables"""
+        origins = [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
+        
+        # Add frontend URL if specified in environment
+        if self.frontend_url and self.frontend_url.strip():
+            frontend = self.frontend_url.strip()
+            if frontend not in origins:
+                origins.append(frontend)
+        
+        # Allow all Vercel preview deployments in production
+        if not self.debug:
+            origins.append("https://*.vercel.app")
+        
+        return origins
     
     @property
     def use_d1(self) -> bool:

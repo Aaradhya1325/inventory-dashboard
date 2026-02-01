@@ -1,7 +1,7 @@
-const API_BASE_URL = import.meta.env.VITE_API_URL;
+const API_BASE_URL = import.meta.env.BACKEND_API_URL;
 
 if (!API_BASE_URL) {
-  console.error('❌ VITE_API_URL is not configured. Please set it in environment variables.');
+  console.error('❌ BACKEND_API_URL is not configured. Please set it in environment variables.');
 }
 
 // Generic fetch wrapper with error handling
@@ -10,7 +10,7 @@ async function fetchApi<T>(
   options?: RequestInit
 ): Promise<T> {
   if (!API_BASE_URL) {
-    throw new Error('Backend URL not configured. Please set VITE_API_URL.');
+    throw new Error('Backend URL not configured. Please set BACKEND_API_URL.');
   }
 
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
