@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { Header } from './components/Header';
 import { SummaryCards } from './components/SummaryCards';
 import { BinGrid } from './components/BinGrid';
