@@ -9,8 +9,11 @@ from pathlib import Path
 backend_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(backend_dir))
 
-# Now import from app.main
+# Import the FastAPI app
 from app.main import app
 
-# Vercel handler
-handler = app
+# Import Mangum adapter for AWS Lambda/Vercel
+from mangum import Mangum
+
+# Create the Vercel handler
+handler = Mangum(app, lifespan="off")
